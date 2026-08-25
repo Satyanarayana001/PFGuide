@@ -1,0 +1,37 @@
+{
+  "applications": [
+    {
+      "application_id": "APP-2026-1001",
+      "service_name": "Provident Fund Claim",
+      "claim_type": "Final Settlement",
+      "status": "ACTION_REQUIRED",
+      "submitted_date": "2026-08-10",
+      "current_stage": "Verification Review",
+      "issue": "Employer verification is incomplete",
+      "documents_status": "Documents received",
+      "next_action": "Contact your employer and request completion of verification."
+    },
+    {
+      "application_id": "APP-2026-1002",
+      "service_name": "Provident Fund Claim",
+      "claim_type": "Transfer Claim",
+      "status": "PROCESSING",
+      "submitted_date": "2026-08-12",
+      "current_stage": "Claim Processing",
+      "issue": "No issue reported",
+      "documents_status": "Documents received",
+      "next_action": "Check this synthetic claim again after processing is complete."
+    },
+    {
+      "application_id": "APP-2026-1003",
+      "service_name": "Provident Fund Claim",
+      "claim_type": "Partial Withdrawal",
+      "status": "APPROVED",
+      "submitted_date": "2026-08-05",
+      "current_stage": "Approval Complete",
+      "issue": "No issue reported",
+      "documents_status": "Documents received",
+      "next_action": "No action is needed for this synthetic claim."
+    }
+  ]
+}

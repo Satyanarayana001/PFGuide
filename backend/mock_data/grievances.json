@@ -1,0 +1,13 @@
+{
+  "grievances": [
+    {
+      "reference_number": "GRV-2026-346373",
+      "application_id": "APP-2026-1001",
+      "subject": "Assistance needed with employer verification is incomplete",
+      "message": "My synthetic Final Settlement is currently at the Verification Review stage. The current issue shown is that employer verification is incomplete. I would like assistance in understanding what is required to move my claim forward. The suggested next step is: Contact your employer and request completion of verification.",
+      "status": "SUBMITTED",
+      "created_at": "2026-08-25T13:51:13.454486+00:00",
+      "demo": true
+    }
+  ]
+}

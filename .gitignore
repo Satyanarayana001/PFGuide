@@ -1,0 +1,32 @@
+# Python virtual environments
+backend/venv/
+venv/
+.venv/
+env/
+
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+*.env
+!.env.example
+
+# Test and coverage output
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/dist/
+
+# IDE settings
+.vscode/
+.idea/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
