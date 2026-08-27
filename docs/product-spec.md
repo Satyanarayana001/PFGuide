@@ -2,7 +2,7 @@
 
 ## 1. Problem
 
-Understanding the status of a Provident Fund (PF) claim can be difficult for many citizens.
+Understanding the status of a Provident Fund (PF) claim can be difficult for citizens using digital public services.
 
 A claim status may contain terms such as:
 
@@ -11,38 +11,42 @@ A claim status may contain terms such as:
 - Processing
 - Action Required
 
-Users may not clearly understand:
+The citizen may be able to see the status but still not understand:
 
 - What the current status means
-- Why the claim is delayed
-- What action they should take next
-- How to ask for help when the issue is not resolved
+- Why the claim needs attention or is delayed
+- What action should be taken next
+- Where to seek help if the issue remains unresolved
 
-This creates confusion and unnecessary effort while navigating public-service portals.
+The problem is therefore not only access to claim information. The problem is turning a status into something understandable and actionable.
+
+This can create confusion, repeated searching, and unnecessary effort while navigating a public-service journey.
 
 ## 2. Target User
 
 PFGuide is designed for Indian citizens who have submitted a PF-related claim and find the status or next steps difficult to understand.
 
-The prototype particularly considers users who:
+The prototype particularly considers citizens who:
 
 - Have limited experience with digital government services
-- Use mobile devices
+- Primarily use mobile devices
 - Prefer simple and direct language
-- May be using slower internet connections
-- Need clear guidance instead of technical status messages
+- May use slower or unreliable internet connections
+- Need clear guidance instead of unexplained technical status messages
 
-## 3. Solution
+## 3. Product Goal
 
-PFGuide provides a simplified citizen journey that helps a user understand a synthetic PF claim.
+The goal of PFGuide is to demonstrate a simpler citizen experience for understanding a claim and deciding what to do next.
 
-The prototype converts a claim status into three simple questions:
+The experience is organized around three questions:
 
-1. What happened?
-2. Why did it happen?
-3. What can I do now?
+1. **What happened?**
+2. **Why did it happen?**
+3. **What can I do now?**
 
-If the user still needs help, PFGuide prepares an editable simulated grievance draft based on the claim information.
+If the citizen still needs assistance, PFGuide continues the journey by preparing an editable simulated grievance draft.
+
+The goal is not to replace an official government portal. The prototype demonstrates how a confusing part of a public-service journey could be redesigned to be clearer and easier to use.
 
 ## 4. Complete Citizen Journey
 
@@ -51,80 +55,160 @@ The main journey is:
 1. Open PFGuide.
 2. Start the demo using synthetic data.
 3. View the current claim status.
-4. See important claim information.
-5. Request a simple explanation.
-6. Understand what happened and why.
-7. Review actionable next steps.
-8. Prepare a simulated grievance draft.
-9. Edit the grievance if required.
-10. Submit the simulated grievance.
-11. Receive a synthetic reference number.
+4. See the important claim information.
+5. Choose to understand the claim.
+6. Read a plain-language explanation of what happened.
+7. Understand why the claim needs attention.
+8. Review actionable next steps.
+9. Prepare a simulated grievance draft if additional help is needed.
+10. Review and edit the grievance draft.
+11. Submit the grievance within the prototype.
+12. Receive a synthetic reference number.
+13. Restart the journey if required.
 
-The journey can then be restarted.
+The main citizen journey is designed to work from start to finish rather than stopping at a static interface or isolated screen.
 
-## 5. What Makes It Better
+## 5. Core User Experience
 
-PFGuide focuses on reducing confusion.
+PFGuide reduces complexity by giving the citizen one clear next step at each stage.
 
-Instead of presenting only a technical status, it provides:
+Instead of presenting only a technical status, the experience provides:
 
+- A clear claim overview
 - Plain-language explanations
-- Clear next actions
-- A step-by-step journey
-- An editable grievance draft
-- Mobile-friendly design
-- Loading, error, and retry states
-- Clear synthetic-data disclosures
+- A distinction between what happened and why it happened
+- Actionable next steps
+- An editable grievance draft instead of a blank starting point
+- Clear feedback after simulated submission
+- A synthetic reference number
 
-The goal is not to replace an official government portal. The goal is to demonstrate how the citizen experience could be made easier to understand.
+This creates a progression from **status → understanding → action → further help**.
 
-## 6. What Works Today
+## 6. Usability and Accessibility Considerations
 
-The prototype includes:
+The prototype is designed with real-world digital constraints in mind.
+
+Key considerations include:
+
+- Mobile-responsive layout
+- Simple and direct language
+- Clear visual hierarchy
+- One primary action at each stage
+- Lightweight frontend implementation
+- Loading states for asynchronous requests
+- Error states when requests fail
+- Retry behavior
+- Clear disclosure of simulated behavior
+
+The design aims to reduce cognitive load for citizens with different levels of digital experience.
+
+## 7. What Works Today
+
+The working prototype includes:
 
 - React and Vite frontend
 - FastAPI backend
-- Synthetic claim data
+- Synthetic demo authentication
+- Synthetic claim and application data
 - Claim status retrieval
 - Plain-language claim explanations
-- Suggested next actions
+- Actionable next-step guidance
 - Simulated grievance draft generation
 - Editable grievance submission
 - Synthetic grievance reference numbers
-- Loading and error handling
-- Mobile-first responsive interface
+- Loading states
+- Error handling
+- Retry behavior
+- Mobile-responsive interface
+- Connected frontend and backend deployment
 
-## 7. What Is Mocked
+The complete primary journey can be tested end-to-end.
+
+## 8. Product and System Design
+
+The application separates the citizen-facing interface from the backend logic.
+
+```text
+Citizen
+   ↓
+React + Vite Frontend
+   ↓
+FastAPI API Routes
+   ↓
+Application / Explanation / Grievance Logic
+   ↓
+Synthetic JSON Data
+```
+
+The frontend communicates with the backend through API endpoints.
+
+This structure makes it possible to demonstrate the complete product journey while keeping sensitive or unavailable integrations safely mocked.
+
+## 9. What Is Mocked
 
 The following are intentionally simulated:
 
 - User identity
 - PF claim information
+- Claim statuses
 - Claim processing
-- Employer verification
+- Employer verification details
+- Grievance draft generation
 - Grievance submission
 - Reference numbers
 - Government-system interactions
 
 PFGuide does not connect to EPFO or any live government system.
 
-No Aadhaar numbers, PAN details, passwords, OTPs, payment information, or other sensitive personal data are used.
+No real Aadhaar numbers, PAN information, passwords, OTPs, payment information, or PF account data are used.
 
-## 8. Safety and Scale
+All synthetic behavior is intentionally disclosed to the user.
 
-A real implementation could use secure and officially authorized integrations where available.
+## 10. Safety and Privacy
 
-Important requirements for a production system would include:
+The prototype avoids collecting or processing sensitive citizen information.
 
-- Official authorization and APIs
+Synthetic data is used because a production public-service integration would require appropriate authorization, security controls, and privacy protections.
+
+A production implementation should include:
+
+- Official authorization and approved API access
 - Secure authentication
+- Explicit citizen consent
 - Data minimization
-- Encryption
-- Consent-based access
+- Encryption in transit and at rest
+- Role-based access controls
 - Audit logging
 - Rate limiting
-- Clear error handling
-- Accessibility testing
-- Support for multiple Indian languages
+- Monitoring and incident response
+- Secure error handling
+- Privacy and data-protection compliance
 
-The current project is a prototype designed to demonstrate the citizen experience safely using synthetic data.
+## 11. Future Scalability
+
+A future production version could integrate with authorized systems while keeping the same citizen-centered explanation flow.
+
+Possible future improvements include:
+
+- Authorized government API integrations
+- Real claim retrieval with citizen consent
+- Secure grievance-routing workflows
+- Multiple Indian language support
+- Accessibility testing and improvements
+- Human support escalation for uncertain cases
+- Monitoring and service reliability controls
+
+The current prototype intentionally focuses on validating the product experience without requiring access to real government systems or sensitive personal data.
+
+## 12. Success Criteria
+
+PFGuide succeeds as a prototype if a citizen can:
+
+1. Understand the current claim status.
+2. Understand why attention may be required.
+3. Identify a clear next action.
+4. Continue to a grievance flow when additional help is needed.
+5. Complete the simulated journey from start to finish.
+6. Clearly understand which data and actions are synthetic.
+
+The prototype is designed to demonstrate that public-service status information can be transformed into a clearer, more understandable, and more actionable citizen journey.

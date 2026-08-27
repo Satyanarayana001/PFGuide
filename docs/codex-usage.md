@@ -2,106 +2,172 @@
 
 ## Overview
 
-PFGuide was built through an iterative development workflow using Codex as a meaningful development tool.
+PFGuide was built through an iterative development workflow in which Codex was used as a meaningful development assistant throughout the project.
 
-Codex was used throughout the project to help design, implement, test, review, and improve the prototype.
+Codex contributed to planning, implementation, debugging, testing, documentation, and refinement of both the backend and frontend.
 
-It was not added only for documentation or submission purposes.
+It was part of the actual development process rather than being added only for the hackathon submission.
 
-## Areas Where Codex Was Used
+## 1. Project Planning and Architecture
 
-### 1. Project Architecture
+Codex assisted in breaking the prototype into a clear application structure.
 
-Codex assisted with planning the application structure, including:
+This included planning:
 
-- Backend organization
-- API routes
-- Data models
-- Service layer
-- Mock data handling
-- Frontend structure
-- Component separation
+- FastAPI backend routes
+- Request and response models
+- Service-layer responsibilities
+- Synthetic JSON data handling
+- Frontend application structure
+- React component separation
+- Error and loading states
+- Test organization
+- Documentation structure
 
-The project was organized into separate backend, frontend, documentation, and test areas.
+The resulting project was organized into separate backend, frontend, test, mock-data, and documentation areas.
 
-### 2. Backend Development
+## 2. Backend Development
 
-Codex assisted with implementing and reviewing the FastAPI backend.
+Codex was used while implementing and refining the FastAPI backend.
 
-This included work around:
+This included assistance with:
 
-- Claim data retrieval
-- Claim explanation responses
+- Demo authentication using synthetic data
+- Claim and application lookup
+- Claim status responses
+- Plain-language explanation logic
+- Actionable next-step responses
 - Grievance draft generation
 - Simulated grievance submission
-- Request and response schemas
-- Synthetic mock data
+- Synthetic reference number generation
+- Pydantic request and response schemas
 - Error handling
+- Mock JSON data access
 
-The prototype intentionally avoids live government systems and uses synthetic data.
+During development, unused functionality was also reviewed and removed where it was not necessary for the citizen journey.
 
-### 3. Frontend Development
+The backend intentionally avoids live EPFO or government integrations.
 
-Codex was used to help build the React and Vite frontend.
+## 3. Frontend Development
 
-The frontend includes:
+Codex assisted in building the React and Vite frontend that supports the complete citizen journey.
+
+This included:
 
 - Welcome screen
+- Demo entry flow
 - Claim overview
 - Plain-language claim explanation
 - Actionable next steps
 - Editable grievance draft
-- Simulated submission success screen
+- Simulated grievance submission
+- Success screen with synthetic reference number
 - Loading states
 - Error states
 - Retry behavior
+- API integration
 - Mobile-responsive styling
 
-### 4. Testing and Verification
+The frontend was designed so that the citizen moves through one clear primary action at each stage.
 
-Codex assisted with reviewing the end-to-end citizen journey and identifying implementation issues.
+## 4. Debugging and Deployment
 
-Backend regression testing was run using pytest.
+Codex was used during debugging and deployment-related work.
 
-The backend test suite passed:
+This included reviewing:
 
+- API connectivity between frontend and backend
+- Environment variable configuration
+- CORS configuration for the deployed frontend
+- Route and import issues
+- Git changes and project structure
+- Production build behavior
+
+The backend and frontend were then deployed separately and tested as a connected application.
+
+## 5. Testing and Verification
+
+Codex assisted with reviewing the implementation and identifying areas that required verification.
+
+Backend regression tests were executed using:
+
+```powershell
+pytest
+```
+
+Verified result:
+
+```text
 11 passed
+```
 
-The React frontend was also built successfully using:
+The frontend production build was also verified using:
 
+```powershell
 npm run build
+```
 
 The production build completed successfully.
 
-### 5. Iterative Improvement
+The deployed citizen journey was then tested from start to finish:
 
-The development process involved repeated review and refinement.
+```text
+Start Demo
+    ↓
+View Claim Status
+    ↓
+Understand the Claim
+    ↓
+See Why It Happened
+    ↓
+Get Actionable Next Steps
+    ↓
+Prepare Grievance Draft
+    ↓
+Edit Draft
+    ↓
+Simulated Submission
+    ↓
+Synthetic Reference Number
+```
 
-Examples include:
+## 6. Iterative Improvement
 
-- Improving the citizen journey
-- Clarifying synthetic-data disclosures
-- Reviewing whether unused routes were necessary
+The project was developed through repeated implementation, testing, review, and refinement.
+
+Examples of iterative improvements included:
+
+- Simplifying the citizen journey
+- Improving claim explanations
+- Adding actionable next steps
+- Adding loading and error states
+- Making synthetic behavior clear
+- Removing unnecessary functionality
 - Improving frontend usability
-- Verifying API behavior
-- Testing the grievance flow
-- Checking production frontend builds
+- Testing API connectivity
+- Resolving deployment issues
+- Verifying the production frontend build
+- Testing the complete deployed journey
 
 ## Human Decisions
 
-Codex assisted with implementation, but product decisions remained intentional.
+Codex assisted with development, but the core product decisions were intentionally made around the hackathon problem.
 
 Key decisions included:
 
-- Focusing on PF claim-status confusion as the problem
-- Designing the experience around simple questions
-- Using mock data instead of sensitive information
-- Avoiding live government integrations
-- Making simulated behavior clearly visible
-- Prioritizing the complete citizen journey over an admin interface
+- Focusing on PF claim-status confusion as the citizen problem
+- Designing the experience around three simple questions:
+  1. What happened?
+  2. Why did it happen?
+  3. What can I do now?
+- Prioritizing a complete citizen journey instead of an admin interface
+- Using synthetic data instead of sensitive personal information
+- Avoiding live EPFO or government integrations
+- Clearly disclosing simulated behavior
+- Keeping the interface simple and mobile-friendly
 
 ## Conclusion
 
-Codex was used as part of the actual development workflow for planning, implementation, debugging, testing, and refinement of PFGuide.
+Codex was used as a meaningful part of the actual PFGuide development workflow across planning, architecture, backend implementation, frontend development, debugging, testing, deployment, and iterative refinement.
 
-The final prototype represents an iterative human-and-Codex development process rather than an existing project with a minimal AI-related addition.
+The final prototype represents an iterative human-and-Codex development process. Codex was not added as a superficial feature for submission purposes; it was used throughout the process of building and improving the working prototype.
